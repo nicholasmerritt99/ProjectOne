@@ -1,104 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Project 1 - Restaurant API- Alicia Garcia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
-
 <body>
-    <div id="recipe-button"></div>
-
-
-    <form id="food-form">
-        <label for="food-input">Hungry for?</label>
-        <input type="text" id="food-input"><br>
-
-        <input id="add-food" type="submit" value="Search">
-
-    </form>
-
-    <div class="title"></div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript"></script>
-    <script>
-        //variable for restaurants; make an array [" "]
-        var restaurants = [" "];
-
-        function displayResInfo() {
-            var food = $(this).attr("data-food");
-
-
-            // API SerpWow.com API Playground 
-
-            var queryURL = "https://api.serpwow.com/live/search?api_key=4BF181DC&q=" + restaurants + "&google_domain=google.com&location=Frisco,Texas,United+States&gl=us&hl=en&search_type=places"
-
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-                // After data comes back from the request
-                //function that adds info. from response to webpage
-            }).then(function (response) {
-
-                console.log(queryURL);
-                console.log(response);
-
-                //Looping over every result item
-                var results = response.places_results;
-                for (var i = 0; i < results.length; i++) {
-
-                    console.log(results);
-                    //creating a div for restaurant info.
-                    var restaurantDiv = $("<div>");
-
-                    //loops through all results for title
-                    var title = results[i].title;
-
-                    //appends title to div
-                    var pTitle = $("<p>").text("Title: " + title);
-                    pTitle.addClass("pTitle");
-                    restaurantDiv.append(pTitle);
-
-                    //address
-                    var address = results[i].address;
-
-                    var pAddress = $("<p>").text("Address: " + address);
-                    pAddress.addClass("pAddress");
-                    restaurantDiv.append(pAddress);
-
-                    //link
-                    var link = results[i].link;
-
-                    var pLink = $("<p>").text("Link: " + link);
-                    pLink.addClass("pLink");
-                    restaurantDiv.append(pLink);
-
-                    //phone number
-                    var phone = results[i].phone;
-
-                    var pPhone = $("<p>").text("Phone Number: " + phone);
-                    pPhone.addClass("pPhone");
-                    restaurantDiv.append(pPhone);
-
-                    //prepends all p /div's to webpage
-
-                    $(".title").prepend(restaurantDiv);
-
-                }
-            });
-
-        }
-
-        $("#add-food").on("click", function (event) {
-            event.preventDefault();
-            var food = $("#food-input").val().trim();
-            restaurants.push(food);
-        });
-
-        $(document).on("click", "#add-food", displayResInfo);
-
-    </script>
+    
 </body>
-
 </html>

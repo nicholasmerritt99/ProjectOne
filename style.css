@@ -1,0 +1,82 @@
+.display-1 {
+	font-size: 50px;
+	text-align: center;
+	color: rgb(216, 190, 126);
+	font-family: fantasy;
+	font-size: 70px;
+	position: relative;
+	top: -50px;
+}
+
+.jumbotron {
+	background-color: rgb(11, 174, 250);
+	border: solid rgb(216, 190, 126) 10px;
+	height: 30px;
+}
+
+.container-1 {
+	float: left;
+	width: 200px;
+	border: groove 20px rgb(11, 174, 250);
+	height: 400px;
+}
+
+.container-1 img {
+	height: 360px;
+}
+
+.container-2 {
+	float: right;
+	width: 200px;
+	border: groove 20px rgb(11, 174, 250);
+	height: 400px;
+}
+
+.container-2 img {
+	height: 360px;
+}
+
+.wrapper {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -400%);
+}
+
+.form-group {
+	position: absolute;
+	top: 20%;
+	left: 51%;
+	transform: translate(-50%, -50%);
+}
+
+.footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 9%;
+	background-color: rgb(11, 174, 250);
+	color: rgb(216, 190, 126);
+	text-align: center;
+	font-size: 30px;
+	border: solid rgb(216, 190, 126) 10px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+}
+
+.container-4 {
+	width: 80px;
+	position: absolute;
+	top: 35%;
+	left: 27%;
+	font-size: 16px;
+}
+
+.container-5 {
+	width: 70px;
+	position: absolute;
+	top: 35%;
+	right: 42%;
+	font-size: 16px;
+}

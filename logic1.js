@@ -1,35 +1,81 @@
-button.onclick = function() {
-  var startPos;
-  var nudge = document.getElementById("nudge");
+//variable for restaurants; make an array [" "]
+var restaurants = [" "];
 
-  var showNudgeBanner = function() {
-    nudge.style.display = "block";
-  };
+//function re-renders the html to display the appropriate content
+function displayResInfo() {
+  var food = $(this).attr("data-food");
 
-  var hideNudgeBanner = function() {
-    nudge.style.display = "none";
-  };
 
-  var nudgeTimeoutId = setTimeout(showNudgeBanner, 5000);
+  // API SerpWow.com API Playground 
 
-  var geoSuccess = function(position) {
-    hideNudgeBanner();
-    // We have the location, don't display banner
-    clearTimeout(nudgeTimeoutId);
+  var queryURL = "https://api.serpwow.com/live/search?api_key=4BF181DC&q=" + restaurants + "&google_domain=google.com&location=Frisco,Texas,United+States&gl=us&hl=en&search_type=places"
 
-    // Do magic with location
-    startPos = position;
-    document.getElementById('startLat').innerHTML = startPos.coords.latitude;
-    document.getElementById('startLon').innerHTML = startPos.coords.longitude;
-  };
-  var geoError = function(error) {
-    switch(error.code) {
-      case error.TIMEOUT:
-        // The user didn't accept the callout
-        showNudgeBanner();
-        break;
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+    // After data comes back from the request
+    //function that adds info. from response to webpage
+  }).then(function (response) {
+
+    console.log(queryURL);
+    console.log(response);
+
+    //Looping over every result item
+    var results = response.places_results;
+    for (var i = 0; i < results.length; i++) {
+
+      console.log(results);
+      //creating a div for restaurant info.
+      var restaurantDiv = $("<div>");
+      restaurantDiv.addClass("restaurantDiv");
+
+
+      //loops through all results for title
+      var title = results[i].title;
+
+      //appends title to div
+      var pTitle = $("<p>").text("Title: " + title);
+      pTitle.addClass("pTitle");
+      restaurantDiv.append(pTitle);
+
+      //address
+      var address = results[i].address;
+
+      var pAddress = $("<p>").text("Address: " + address);
+      pAddress.addClass("pAddress");
+      restaurantDiv.append(pAddress);
+
+      //link
+      var link = results[i].link;
+
+      var pLink = $("<p>").text("Link: " + link);
+      pLink.addClass("pLink");
+      restaurantDiv.append(pLink);
+
+      //phone number
+      var phone = results[i].phone;
+
+      var pPhone = $("<p>").text("Phone Number: " + phone);
+      pPhone.addClass("pPhone");
+      restaurantDiv.append(pPhone);
+
+      //prepends all p /div's to webpage
+
+      $(".title").prepend(restaurantDiv);
+
     }
-  };
+  });
 
-  navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
-};
+}
+//on click associated with the search button on html
+$("#add-food").on("click", function (event) {
+  //prevent page from reloading on click
+  event.preventDefault();
+  //grabs text user put in  
+  var food = $("#food-input").val().trim();
+  //pushes value to restaurant array  
+  restaurants.push(food);
+
+});
+//click event listener to all elements with the id "add-food"
+$(document).on("click", "#add-food", displayResInfo);

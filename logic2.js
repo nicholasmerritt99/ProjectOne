@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 $("#findMovie").on("click", function (event) {
     event.preventDefault();
     var movie = $("#movieInput").val();
@@ -13,3 +15,4 @@ $("#findMovie").on("click", function (event) {
 
     });
 });
+})

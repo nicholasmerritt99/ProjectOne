@@ -28,12 +28,9 @@
 		<div class="row">
 
 			<!-- <div class="container-3"> -->
-			<div class="col-3"></div>
+			<div class="col-4"></div>
 
-			<div class="col-3">
-				<input type="text" class="input" placeholder="search for food" id="food-input" />
-				<input type="button" value="Search" class="close=btn" id="add-food" />
-			</div>
+
 
 			<!-- </div>
 									</div> -->
@@ -41,13 +38,14 @@
 								<form> -->
 			<!-- <div class="wrapper">
 										<div class="container-3"> -->
-			<div class="col-3">
+			<div class="col-4">
 				<input type="text" id="movieInput" class="input" placeholder="search for movies" />
 				<input type="button" value="Search" id="findMovie" class="close=btn" />
 			</div>
-			<div class="col-3"></div>
+			<div class="col-4"></div>
 
 		</div>
+		<br>
 
 
 		<!-- <div class="container-1"> -->
@@ -79,6 +77,7 @@
 				</div>
 			</div>
 			<!-- </div> -->
+
 			<div class="col-4">
 				<table class="table table-hover">
 					<thead>
@@ -152,6 +151,42 @@
 				</a>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-4"></div>
+
+			<div class="col-4">
+				<input type="text" class="input" placeholder="search for food" id="food-input" />
+				<input type="button" value="Search" class="close=btn" id="add-food" />
+			</div>
+			<div class="col-4"></div>
+
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6 restaurant-table">
+
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">Name</th>
+							<th scope="col">Address</th>
+							<!-- <th scope="col">Link</th> -->
+							<th scope="col">Phone Number</th>
+
+						</tr>
+					</thead>
+
+					<!-- restaurant info goes here! -->
+					<tbody id="restaurant-section">
+					</tbody>
+
+				</table>
+				<div class="col-3">
+				</div>
+			</div>
+		</div>
+
 		<!-- </div> -->
 		<!-- </div> -->
 
@@ -209,33 +244,18 @@
 		<!-- <div class="container-5"> -->
 		<!-- </form> -->
 		<!-- This row will handle all of the retrieved restaurants -->
-		<div class="row">
-			<div class="col-sm-12">
-				<br>
+		<!-- <div class="row"> -->
 
-				<!-- This card will initially be made up of a card and wells for each of the restaruants retrieved -->
-				<div class="card">
 
-					<!-- card Heading for the retrieved restaurants box -->
-					<div class="card-header">
-						<strong>
-							<i class="fa fa-table"></i> Restaurants</strong>
-					</div>
 
-					<!-- This main card will hold each of the resulting articles -->
-					<div class="card-body" id="restaurant-section">
-					</div>
-				</div>
-			</div>
+
+
+		<div class="footer">
+			<p>
+				&copy; Copyright 2019 SMU Bootcamp. All rights reserved
+			</p>
 		</div>
-	</div>
-	</div>
-	<div class="footer">
-		<p>
-			&copy; Copyright 2019 SMU Bootcamp. All rights reserved
-		</p>
-	</div>
-	<!-- </div> -->
+		<!-- </div> -->
 </body>
 
 </html>

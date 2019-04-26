@@ -24,39 +24,41 @@ $(document).ready(function () {
 
       //Looping over every result item
       var results = response.places_results;
+
       for (var i = 0; i < results.length; i++) {
 
-        // Create the  list group to contain the articles and add the article content for each
-        var $restaurantList = $("<ul>");
-        $restaurantList.addClass("list-group");
+
+        // Create the restaurant table to contain the restaurants and add the restaurant content for each
+        var $restaurantList = $("<tr>");
+        $restaurantList.addClass("table table-group");
 
         // Add the newly created element to the DOM
         $("#restaurant-section").append($restaurantList);
 
-        // If the article has a headline, log and append to $articleList
+        // Append title of restaurant to table
         var title = results[i].title;
-        var pTitle = $("<li>").text("Name: " + title);
-        pTitle.addClass("list-group-item title");
+        var pTitle = $("<td>").text(title);
+        pTitle.addClass("ptitle");
         $restaurantList.append(pTitle);
 
         //address
         var address = results[i].address;
 
-        var pAddress = $("<h5>").text("Address: " + address);
+        var pAddress = $("<td>").text(address);
         pAddress.addClass("pAddress");
         $restaurantList.append(pAddress);
 
         //link
-        var link = results[i].link;
+        // var link = results[i].link;
 
-        var pLink = $("<a href>").text("Link: " + link);
-        pLink.addClass("pLink");
-        $restaurantList.append(pLink);
+        // var pLink = $("<td>").text(link);
+        // pLink.addClass("pLink");
+        // $restaurantList.append(pLink);
 
         //phone number
         var phone = results[i].phone;
 
-        var pPhone = $("<h5>").text("Phone Number: " + phone);
+        var pPhone = $("<td>").text(phone);
         pPhone.addClass("pPhone");
         $restaurantList.append(pPhone);
       }

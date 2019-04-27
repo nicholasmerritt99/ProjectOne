@@ -21,10 +21,10 @@ $(document).ready(function () {
 
       // console.log(queryURL);
       console.log(response);
-
+      
       //Looping over every result item
       var results = response.places_results;
-
+      console.log(results)
       for (var i = 0; i < results.length; i++) {
 
 

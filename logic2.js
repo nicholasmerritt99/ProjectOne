@@ -9,10 +9,16 @@ $("#findMovie").on("click", function (event) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-
-        //$('#movie-view').text(JSON.stringify(response));
         console.log(response)
-
+        var results = response;
+        var actors = results.Actors;
+        var rated = results.Rated;
+        var director = results.Director;
+        //$('#movie-view').text(JSON.stringify(response));
+        //console.log(actorOne)
+        $("#rated").text(rated);
+        $("#actors").text(actors);
+        $("#director").text(director);
     });
 });
 })

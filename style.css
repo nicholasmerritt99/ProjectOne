@@ -14,27 +14,30 @@
 	height: 30px;
 }
 
-.container-1 {
+/* .container-1 { */
+	#foodslideshow1 {
 	float: left;
 	width: 200px;
 	border: groove 20px rgb(11, 174, 250);
 	height: 400px;
 }
 
-.container-1 img {
+/* .container-1 img { */
+	img{
 	height: 360px;
 }
 
-.container-2 {
+/* .container-2 { */
+	#foodslideshow2 {
 	float: right;
 	width: 200px;
 	border: groove 20px rgb(11, 174, 250);
 	height: 400px;
 }
 
-.container-2 img {
+/* .container-2 img {
 	height: 360px;
-}
+} */
 
 .wrapper {
 	position: absolute;
@@ -80,3 +83,7 @@
 	right: 42%;
 	font-size: 16px;
 }
+ .restaurant-table {
+	 display: flex;
+	 flex-wrap: wrap;
+ }

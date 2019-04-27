@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     // API SerpWow.com API Playground 
 
-    var queryURL = "https://api.serpwow.com/live/search?api_key=4BF181DC&q=" + restaurants + "&google_domain=google.com&location=Frisco,Texas,United+States&gl=us&hl=en&search_type=places"
+    var queryURL = "https://api.serpwow.com/live/search?api_key=5EF47E9B&q=" + restaurants + "&google_domain=google.com&location=Frisco,Texas,United+States&gl=us&hl=en&search_type=places"
 
     $.ajax({
       url: queryURL,
